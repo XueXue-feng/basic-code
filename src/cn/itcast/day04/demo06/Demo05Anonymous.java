@@ -16,6 +16,7 @@ public class Demo05Anonymous {
 
     public static int ScannerParam(Scanner scanner){
         System.out.print("请在键盘上输入一个数字");
+        System.out.print("请在键盘上输入一个数字");
         int b = scanner.nextInt();
         return b;
     }
