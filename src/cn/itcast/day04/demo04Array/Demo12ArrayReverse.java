@@ -24,7 +24,7 @@ public class Demo12ArrayReverse {
         }*/
 
         for(int min = 0, max = array.length - 1; min < max ; min ++ ,max --){
-            //收尾相接
+            //首尾相接
             int temp = array[min];
             array[min] = array[max];
             array[max] = temp;
