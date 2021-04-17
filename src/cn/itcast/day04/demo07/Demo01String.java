@@ -25,7 +25,7 @@ public class Demo01String {
         String str1 = new String();
         System.out.println("第一个字符串是" + str1);
 
-        //根据字符数组创建
+        //根据char字符数组创建
         char[] arrayChar = new char[]{'A','B','C','D'};
         String str2 = new String(arrayChar);
         System.out.println("第二个字符串是" + str2);
