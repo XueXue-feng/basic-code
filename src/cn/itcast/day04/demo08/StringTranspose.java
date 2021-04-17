@@ -17,6 +17,15 @@ public class StringTranspose {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + "," );
         }
+        System.out.println("\n==============");
+
+        //对字符数组进行升序排列
+        String str = "asertyuikolcvbnjmkvbnjmk";
+        char[] charArray = str.toCharArray();
+        Arrays.sort(charArray);
+        for (int i = 0; i < charArray.length; i++) {
+            System.out.print(charArray[i] + ",");
+        }
     }
 
     //用随机数产生一个长度为6的数组
