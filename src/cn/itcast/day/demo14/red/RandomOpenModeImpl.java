@@ -10,11 +10,16 @@ public class RandomOpenModeImpl implements OpenMode{
         ArrayList<Integer> arrayList = new ArrayList<>();
         int sum = 0;//已经抢的红包的和
         for (int i = 0; i < totalCount; i++) {
-            if(i == totalCount - 1){
-                arrayList.add(totalMoney - sum);
+
+            if(sum < totalMoney){
+                if(i == totalCount - 1 && sum < totalMoney){
+                    arrayList.add(totalMoney - sum);
+                }else {
+                    arrayList.add(new Random().nextInt((2 * (totalMoney / totalCount))) + 1);
+                    sum = sum + arrayList.get(i);
+                }
             }
-            arrayList.add(new Random().nextInt((2 * (totalMoney / totalCount))) + 1);
-            sum = sum + arrayList.get(i);
+
         }
         return arrayList;
     }
