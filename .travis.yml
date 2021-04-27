@@ -3,7 +3,6 @@
   "os": [
       "linux"
   ],
-  "dist": "xenial",
   "branches": {
     "only": [
         "gh-pages"
