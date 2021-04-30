@@ -15,7 +15,7 @@ public class Demo01Collections {
         Collections.shuffle(arrayList,new Random());
         System.out.println(arrayList);//[c, b, b, a]
 
-        //sort()方法按照字母的ASCII表进行排序注意事项；被排序的几个必须实现Comparable接口重写CompareTo()
+        //sort()方法按照字母的ASCII表进行排序注意事项；被排序的集合必须实现Comparable接口重写CompareTo()
         //排序规则：this-参数 就是升序 反之就是降序
         Collections.sort(arrayList);
         System.out.println(arrayList);//[a, b, b, c]
