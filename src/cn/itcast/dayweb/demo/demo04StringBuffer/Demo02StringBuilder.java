@@ -12,7 +12,7 @@ public class Demo02StringBuilder {
     //参数的构造方法
     public static void stringBuilderLearning(){
         StringBuilder stringBuilder = new StringBuilder();
-        System.out.println(stringBuilder.capacity());//出事容量为16
+        System.out.println(stringBuilder.capacity());//初始容量为16
 
         StringBuilder stringBuilderCapacity = new StringBuilder(17);
         System.out.println(stringBuilderCapacity.capacity());//指定容量的构造方法17
