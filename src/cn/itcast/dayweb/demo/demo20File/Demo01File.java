@@ -3,7 +3,7 @@ package cn.itcast.dayweb.demo.demo20File;
 import java.io.File;
 
 /*
-*  java.io.File 类 文件和目录路径名的丑偶像表现形式
+*  java.io.File 类 文件和目录路径名的抽象表现形式
 *  java把电脑中的文件和文件夹（目录）封装为一个file类，我们可以通过file类对文件夹进行操作
 * File类是一个与操作系统无关的类，任何一个操作系统都可以使用File类
 * file文件 directory文件夹/目录 path 文件夹路径

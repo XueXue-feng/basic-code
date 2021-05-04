@@ -4,16 +4,16 @@ import java.io.File;
 
 /*
  * 绝对路径：是一个完整的路径，以盘符开始的路径 D:\\IntelliJ IDEA 2020.3.3\\code\\day04-code
- * 相对路径：是一个简化的路径，相对于当前项目的根目录，如果使用当前项目的根目录可以简化书写.
+ * 相对路径：是一个简化的路径，相对于当前项目的根目录，使用当前项目的根目录可以简化书写.
  * EXP:文件目录为：D:\\IntelliJ IDEA 2020.3.3\\code\\day04-code\\123.txt可以简化书写为：123.txt(可以省略项目根目录)
  * 注意：1.路径不区分大小写
  * 2.在Windows中使用\，反斜杠是转义字符，所以反斜杠要写两个才能代表一个转义字符
  * */
 public class Demo02File {
     public static void main(String[] args) {
-        //show01();
+        show01();
        // show02("D:\\", "a.txt");//D:\a.txt
-        show03();
+        //show03();
     }
 
     /*
@@ -49,7 +49,7 @@ public class Demo02File {
         System.out.println(file2);//D:\IntelliJ IDEA 2020.3.3\code
 
         File file3 = new File("a.txt");
-        System.out.println(file3);//a.txt
+        System.out.println(file3.getAbsoluteFile());//a.txt
 
     }
 }

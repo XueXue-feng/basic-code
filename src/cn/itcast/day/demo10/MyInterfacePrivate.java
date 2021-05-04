@@ -15,11 +15,11 @@ public interface MyInterfacePrivate {
         methodCommon();
     }
     public default void methodDefaultB(){
-        System.out.println("这是接口的默认方法A");
+        System.out.println("这是接口的默认方法B");
         methodCommon();
     }
     public default void methodDefaultC(){
-        System.out.println("这是接口的默认方法A");
+        System.out.println("这是接口的默认方法C");
         methodCommon();
     }
     //默认方法的私有化

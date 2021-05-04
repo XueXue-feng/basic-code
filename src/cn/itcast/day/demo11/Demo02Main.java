@@ -8,7 +8,7 @@ package cn.itcast.day.demo11;
 * */
 public class Demo02Main {
     public static void main(String[] args) {
-        //对象的想上转型
+        //对象的向上转型
         Animal animal = new Cat();
         animal.eat();//猫吃鱼
 

@@ -16,6 +16,7 @@ public class Demo03File {
     public static void getFileAbsolutePath() {
         System.out.println(file.getAbsoluteFile());//D:\Download\a.txt
     }
+
     //public String getPath()
     public static void getFilePath() {
         File file = new File("a.txt");
