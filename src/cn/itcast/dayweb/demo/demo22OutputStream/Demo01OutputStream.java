@@ -7,10 +7,8 @@ import java.io.IOException;
 /*
 * java.io.OutputStream 此抽象类是表示输出字节流的所有类的超类
 * java.io.FileOutputStream extends OutputStream也叫文件字节输出流，作用：把内存中的数据写入到硬盘文件中
-* FileOutputStream(File file)
-          创建一个向指定 File 对象表示文件中写入数据的文件输出流。
-FileOutputStream(String name)
-          创建一个向具有指定名称的文件中写入数据的输出文件流。
+* FileOutputStream(File file) 创建一个向指定 File 对象表示文件中写入数据的文件输出流。
+FileOutputStream(String name) 创建一个向具有指定名称的文件中写入数据的输出文件流。
    写入文件的目的地：File file目的地是文件的路径，String name目的地是文件名
    * 作用： 1.会创建一个FileOutputStream对象
    * 2.会根据构造方法中传递的文件/目录创建一个空文件

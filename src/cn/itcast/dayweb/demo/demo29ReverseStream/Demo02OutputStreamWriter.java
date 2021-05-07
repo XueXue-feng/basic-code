@@ -14,7 +14,7 @@ import java.nio.charset.StandardCharsets;
   OutputStreamWriter(OutputStream out, String charsetName)
           创建使用指定字符集的 OutputStreamWriter。
  参数：OutputStream字节输出流，可以写转换之后的字节写入到文件中
- * charsetName指定的编码表名称，不区分大小写，不知道则默认UTF-8
+ * charsetName指定的编码表名称，不区分大小写，不指定则默认UTF-8
  * 使用步骤：1.创建outputStreamWriter对象，再构造方法中指定编码表和FileOutputStream对象
  * 2.使用outputStreamWriter中的write方法，把字符转换成字节存储到缓冲区中（编码）
  * 3.使用outputStreamWriter的flush()和close()

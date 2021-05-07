@@ -25,7 +25,7 @@ public class TransDemo {
         }
     }
 
-    //指定UTF-8编码的转换流，写出文本文件
+    //指定UTF-8编码的转换流，写入文本文件
     public static void writeFile(){
         try(OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream
                 ("D:\\\\新建文件夹\\\\我是GBK编码文件"),"GBK")) {

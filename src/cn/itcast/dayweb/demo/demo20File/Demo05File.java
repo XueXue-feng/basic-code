@@ -5,9 +5,9 @@ import java.io.IOException;
 
 public class Demo05File {
     public static void main(String[] args) {
-       // mkFile();
+        mkFile();
         //mkFileJia();
-        deleteFile();
+        //deleteFile();
     }
 
     /*
@@ -33,9 +33,9 @@ public class Demo05File {
         System.out.println(file3.mkdirs());//true
     }
 
-    //创建一个空文件1.如果文件存在则返回false不会新创建
+    //创建一个空文件1.如果文件存在则返回false不会新创建/*code\day04-code\*/
     public static void mkFile(){
-        File file = new File("1.txt");
+        File file = new File("day04-code\\src\\cn\\itcast\\dayweb\\demo\\demo20File\\1.txt");//D:\IntelliJ IDEA 2020.3.3\code\1.txt
         if(!file.exists()){
             try {
                 System.out.println(file.createNewFile());

@@ -16,6 +16,7 @@ public class Practise {
         FileInputStream fis = new FileInputStream("C:\\Users\\16146\\Pictures\\联想锁屏壁纸\\8523825.jpg");
         FileOutputStream fos = new FileOutputStream("D:\\IntelliJ IDEA 2020.3.3\\code\\day04-code\\src\\cn\\itcast\\dayweb\\demo\\demo22OutputStream\\d.jpg",true);
         byte[] byteRead = new byte[246784];
+        //byte[] byteRead = new byte[1024];
         int len = 0;
         while((len = fis.read(byteRead)) != -1){
             //将内存中的图片复制输入到D:\IntelliJ IDEA 2020.3.3\code\day04-code\src\cn\itcast\dayweb\demo\demo22OutputStream

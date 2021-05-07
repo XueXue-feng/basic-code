@@ -6,10 +6,8 @@ import java.io.*;
 * java.io.BufferedReader extends FileReader
 * 继承自父类的方法：close(),read()
 * 构造方法:
-BufferedReader(Reader in)
-          创建一个使用默认大小输入缓冲区的缓冲字符输入流。
-BufferedReader(Reader in, int sz)
-          创建一个使用指定大小输入缓冲区的缓冲字符输入流。
+BufferedReader(Reader in) 创建一个使用默认大小输入缓冲区的缓冲字符输入流。
+BufferedReader(Reader in, int sz) 创建一个使用指定大小输入缓冲区的缓冲字符输入流。
 特有的成员方法：String readLine() 读取一个文本行 换行，回车
 * */
 public class Demo01BufferedReader {

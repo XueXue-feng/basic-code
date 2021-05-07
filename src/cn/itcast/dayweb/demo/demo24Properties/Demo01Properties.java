@@ -11,10 +11,10 @@ import java.util.Set;
 /*
  * java.util.Properties extends HashTable implements Map
  * Properties 类表示了一个持久的属性集。Properties 可保存在流中或从流中加载。属性列表中每个键及其对应值都是一个字符串。
- * 是唯一和IO流相关的流，可以使用Properties中的store方法把内存中集合中的临时数据写入到硬盘中
+ * 是唯一和IO流相关的集合，可以使用Properties中的store方法把内存中集合中的临时数据写入到硬盘中
  * load()把硬盘中保存的文件（键值对）写入到内存集合中使用
  * Properties是一个双列集合key和value默认都是String
- * 注意事项：1.在文件中可以使用#进行注意，用#进行注释的键值对将不会读取
+ * 注意事项：1.在文件中可以使用#进行注释，用#进行注释的键值对将不会读取
  * 2.默认是字符串，不用再加引号
  * */
 public class Demo01Properties {
@@ -40,7 +40,7 @@ public class Demo01Properties {
         }
     }
 
-    //存储数据遍历去除集合中的数据
+    //存储数据遍历集合中的数据
     private static void show01() {
         Properties properties = new Properties();
         properties.setProperty("1","我是胖胖1");
@@ -53,7 +53,7 @@ public class Demo01Properties {
             System.out.println(properties.getProperty(iterator.next()));
         }
 
-        //字节输出流不能传递中文，字节可以传递中文，comments一般使用空字符串
+        //字节输出流不能传递中文，字符输出流可以传递中文，comments一般使用空字符串
         try(FileWriter fileWriter = new FileWriter("D:\\IntelliJ IDEA 2020.3.3\\code\\day04-code\\src\\cn\\itcast\\dayweb\\demo\\demo24Properties\\a.txt");){
             char[] chars = new char[1024];
             fileWriter.write(chars);
