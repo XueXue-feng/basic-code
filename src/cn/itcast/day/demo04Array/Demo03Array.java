@@ -26,7 +26,7 @@ public class Demo03Array {
         int[] arrayC;
         arrayC = new int[8];
 
-        //静态初始化的省略格式不饿能进行拆分
+        //静态初始化的省略格式不能进行拆分
         int[] arrayD;
        // arrayD = {9,7,60}; 错误写法！！
 

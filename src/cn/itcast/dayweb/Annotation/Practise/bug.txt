@@ -1,0 +1,9 @@
+
+add
+NullPointerException
+java.lang.NullPointerException
+==========================
+div
+ArithmeticException
+java.lang.ArithmeticException: / by zero
+==========================
