@@ -12,12 +12,12 @@ import java.lang.annotation.*;
  * @Version: 1.0
  *
  *  * 元注解：用于描述注解的注解
- *  * @Target: 用于描述注解能够作用的范围。方法上还是类上还是等等ElementType的取值TYPE类METHOD:方法FIELD：成员变量
+ *  * @Target: 用于描述注解能够作用的范围。方法上还是类上还是等等ElementType的取值TYPE类 METHOD:方法 FIELD：成员变量
  *  * @Documented: 用于描述注解是否可以被抽取到API中
  *  * @Retention: 描述注解能够被保存的阶段，源码，Class阶段，Runtime阶段
  *  * @Inherited: 描述注解是否能被继承
  *
- *  1.获取这届定义位置的对象class.method,filed.getAnnotation()
+ *  1.获取这定义位置的对象class.method,filed.getAnnotation()
  *  2.利用返回的注解的对象获取其中的属性
  *  3.操作属性
  */

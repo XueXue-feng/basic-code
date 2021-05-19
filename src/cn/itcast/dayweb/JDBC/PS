@@ -1,0 +1,62 @@
+JDBC概念：Java DataBase Connectivity Java数据库连接 Java语言操作数据库
+JDBC本质：其实就是官方(Sun公司 Oracle公司)定义的一套操作所有关系型数据库的规则，及接口，各个数据库厂商去实现这套接口
+提供数据库驱动jar包，我们可以使用这套接口(JDBC)编程，真正指向的代码是驱动jar中的实现类
+实现步骤：1.导入jar驱动架包 2.注册驱动 3.获取数据库的连接对象Connection
+4.定义SQL语句 5.获取执行SQL的对象Statement 6.执行SQL接收返回结果   7.处理结果  8.释放资源
+详解：1.DriverManager:驱动管理对象 java.sql.DriverManager 功能：1.注册驱动 2.获取数据库连接
+static void registerDriver(Driver driver, DriverAction da) 使用 DriverManager注册给定的驱动程序。
+代码中Class.forName("com.mysql.cj.jdbc.Driver"); 功能把类com.mysql.cj.jdbc.Driver加载到内存中
+查看源码可以知道在类com.mysql.cj.jdbc.Driver源码中使用静态代码块调用registerDriver来注册驱动
+static {
+        try {
+            DriverManager.registerDriver(new Driver());
+        } catch (SQLException var1) {
+            throw new RuntimeException("Can't register driver!");
+        }
+    }
+告诉程序该使用哪一个驱动包
+在mysql5.0之后可以不用注册驱动了因为在mysql5.0之后多了一个META-INF里面有一个servers里面帮我们注册好了驱动
+获取数据库的连接
+static Connection getConnection(String url, String user, String password)用户名 密码
+尝试建立与给定数据库URL的连接。  url:指定连接的路径jdbc:mysql//IP地址:端口号/数据库名称?
+细节：如果连接的是本机的mysql而且端口号默认为3306则可以简写为jdbc:mysql///数据库名称?
+2.Connection:数据库连接对象 功能：获取执行sql的对象,管理事务
+Statement createStatement() 创建一个 Statement对象，用于将SQL语句发送到数据库。
+PreparedStatement prepareStatement(String sql) :
+创建一个 PreparedStatement对象，用于将参数化的SQL语句发送到数据库。
+开启事务：void setAutoCommit(boolean autoCommit) 将此连接的自动提交模式设置为给定状态。调用此方法将参数设置为false即是开启事务
+回滚事务：void rollback(Savepoint savepoint) 撤消在给定的 Savepoint对象设置后进行的所有更改。
+提交事务：void commit() 使上次提交/回滚之后所做的所有更改都将永久性，并释放此 Connection对象当前持有的任何数据库锁。
+3.Statement:执行SQL对象 用于执行静态SQL语句并返回其生成的结果的对象。
+boolean execute(String sql) 执行给定的SQL语句，这可能会返回多个结果。  可以执行任意的sql
+int executeUpdate(String sql) DML,DDL 执行给定的SQL语句，这可能是 INSERT ，UPDATE ，或 DELETE声明，或者不返回任何内容，如SQL DDL语句的SQL语句。
+返回值：是影响的行数，可以通过返回值来判断DML语句是否执行成功,行数 > 0说明执行成功，反之失败
+ResultSet executeQuery(String sql) 执行给定的SQL语句，返回一个 ResultSet对象。  执行DQL语句
+4.ResultSet:结果集对象 封装查询结果的
+游标默认指向表头行 1.boolean next方法：游标向下移动一行，判断当前行是否是最后一行末尾（是否有数据）没有数据false
+2.getxxx(参数) xxx代表数据类型 int result = getInt(1);获取数据 参数int类型获取第n列的数据从1开始 String 列的名称
+使用步骤：1.游标向下移动一行 2，判断是否有数据 3.获取数据
+5.PreparedStatement:执行SQL对象
+1.SQL注入问题用户名随便密码输入a'or'a'='a：在凭借sql时候有一些sql的特殊关键字参与字符串的拼接会产生安全问题
+解决使用PreparedStatement来解决
+预编译的SQL语句：参数使用?作为占位符，然后给占位符赋值
+定义SQL:sql参数使用?作为占用符如：select * from user where name = ? and password = ?;
+生成的sql语句or后面是恒等式：SELECT * FROM USER WHERE NAME = 'root' AND PASSWORD = 'a'or'a'='a'
+步骤：1.导入驱动jar架包
+2.注册驱动
+3.获取数据库的Connection对象
+4.编写SQL：使用占位符替代原来的参数如：select * from user where name = ? and password = ?;
+5.获取执行SQL的对象：PreparedStatement,Connection PreparedStatement prepareStatement(String sql)
+创建一个 PreparedStatement对象，用于将参数化的SQL语句发送到数据库。
+给?赋值 setxxx(参数)参数1是?的位置，2是sql的数据
+6.执行SQL;接收返回结果
+注意：后期都会使用PreparedStatement实现增删改查，效率高
+事务：一个包含多个步骤的的业务操作，如果这个业务操作被事务所管理，那么这个业务要看同时成功要么同时失败
+事务的操作：
+开启事务：void setAutoCommit(boolean autoCommit) 将此连接的自动提交模式设置为给定状态。调用此方法将参数设置为false即是开启事务
+回滚事务：void rollback(Savepoint savepoint) 撤消在给定的 Savepoint对象设置后进行的所有更改。
+提交事务：void commit() 使上次提交/回滚之后所做的所有更改都将永久性，并释放此 Connection对象当前持有的任何数据库锁。
+使用Connection对象来管理事务
+在执行SQL之前开启事务
+在SQL执行完毕之后提交事务
+在catch中回滚事务

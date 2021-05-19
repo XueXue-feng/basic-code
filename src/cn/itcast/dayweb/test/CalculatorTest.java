@@ -37,7 +37,7 @@ public class CalculatorTest {
         //创建对象
         Calculator cal = new Calculator();
         int result = cal.sum(1, 7);
-        //System.out.println(result);在测试用例中一般不会使用输出来判断是否正确一般使用断言第一个参数是断言的结果第二个参数是实际的结果
+        //System.out.println(result);在测试用例中一般不会使用输出来判断是否正确,一般使用断言第一个参数是断言的结果第二个参数是实际的结果
         Assert.assertEquals(8,result);
     }
 

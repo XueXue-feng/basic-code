@@ -18,7 +18,6 @@ public class ThreadNotifyAll {
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                        ;
                         System.out.println("顾客1开吃");
                     }
                 }

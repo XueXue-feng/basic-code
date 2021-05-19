@@ -19,7 +19,7 @@ package cn.itcast.dayweb.Annotation;
  * 要求：1.方法属性的返回值类型：1.基本数据类型 2.字符串 3.枚举 4.注解 5.以上类型的数组
  * 2.在使用属性时需要给属性赋值,1.如果定义属性时使用default给属性初始化值则不用赋值了
  * 2.如果注解中只有一个属性而且名字叫做value则value可以省略直接定义值即可数组赋值时候，值需要用{}包裹，如果
- * 数组只要一个元素，则{}可以省略
+ * 数组只有一个元素，则{}可以省略
  *
  * 元注解：用于描述注解的注解
  * @Target: 用于描述注解能够作用的范围。方法上还是类上还是等等
@@ -31,6 +31,6 @@ public @interface Demo03Annotation {
     public abstract String show();//在使用的时候需要给show赋值@Demo03Annotation(show = "string")
     //不允许定义返回值类型为void类型
     //void show02();
-     int age() default 12;//不定义值则默认12
+     public abstract int age() default 12;//不定义值则默认12
 
 }

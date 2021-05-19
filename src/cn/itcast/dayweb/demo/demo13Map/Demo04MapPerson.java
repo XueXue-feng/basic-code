@@ -22,7 +22,7 @@ public class Demo04MapPerson {
             System.out.println(mapPerson.getKey() + "=" + mapPerson.getValue());
         }
 
-        //创建Map对象Map<Person,String>SPerson必须重写hashCode()和equals()方法
+        //创建Map对象Map<Person,String>Person必须重写hashCode()和equals()方法
         HashMap<Person,String> hashMap = new HashMap<>();
         hashMap.put(new Person("迪丽热巴",19),"1");
         hashMap.put(new Person("古力娜扎",19),"2");

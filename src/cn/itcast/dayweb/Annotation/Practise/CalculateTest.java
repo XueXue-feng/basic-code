@@ -40,7 +40,7 @@ public class CalculateTest {
                 }  catch (Exception e) {
                     //如果发生了此异常则创建一个文件，将Bug日志输出到文件中
                     try (
-                         FileOutputStream fos = new FileOutputStream("D:\\IntelliJ IDEA 2020.3.3\\code\\day04-code\\src\\cn\\itcast\\dayweb\\Annotation\\Practise\\bug.txt", true);
+                         FileOutputStream fos = new FileOutputStream("D:\\IntelliJ-IDEA-2020.3.3\\code\\day04-code\\src\\cn\\itcast\\dayweb\\Annotation\\Practise\\bug.txt", true);
                     ) {
                         //异常的名称
                         String str = e.getCause().getClass().getSimpleName();

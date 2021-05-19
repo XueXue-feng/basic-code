@@ -11,7 +11,7 @@ import java.util.Set;
 * 4.K与V一一对应
 * java.util.HashMap<K,V>特点：1.hashmap底层是哈希表，查询速度快，JDK1.7之前是数组+链表
 * JDK1.8+是数组+单向链表或者是数组+红黑树（链表的长度>=8）
-* 2.是一个无序几个
+* 2.是一个无序集合
 * java.util.LinkedHashMap<K,V> extends HshMap<K,V>1.是一个有序的集合
 * 2.底层是哈希表+链表的结构
 * */

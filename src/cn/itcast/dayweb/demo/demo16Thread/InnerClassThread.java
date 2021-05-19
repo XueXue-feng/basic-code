@@ -5,6 +5,8 @@ package cn.itcast.dayweb.demo.demo16Thread;
 * */
 public class InnerClassThread {
     public static void main(String[] args) {
+
+
         //匿名内部类的方法
        new Thread(){
             @Override

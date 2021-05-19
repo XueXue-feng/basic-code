@@ -20,7 +20,7 @@ public class Demo02Annotation {
         return super.toString();
     }
 
-    @Deprecated
+    @Deprecated//该注解表示该方法已经过时不推介使用但是还能继续使用不影响功能
     public void show01(){
         //有缺陷不推介使用
     }
